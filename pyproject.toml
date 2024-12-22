@@ -1,0 +1,18 @@
+[tool.poetry]
+package-mode = false
+description = "Implementation of the LLM in 'Build a Large Language Model (From Scratch)'"
+authors = ["Dennis Kawurek <contact@dkwr.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+tiktoken = "^0.8.0"
+torch = "^2.5.1"
+tensorflow = "2.18.0"
+tqdm = "4.67.1"
+psutil = "6.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
