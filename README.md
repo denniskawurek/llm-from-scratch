@@ -1,18 +1,18 @@
 # Implementing an LLM from Scratch
 
-This implements the LLM which is done in [*Build a Large Language Model (From Scratch)*](https://www.manning.com/books/build-a-large-language-model-from-scratch) by Sebastian Raschka.
+This implements the LLM as described in [*Build a Large Language Model (From Scratch)*](https://www.manning.com/books/build-a-large-language-model-from-scratch) by Sebastian Raschka.
 
-The concepts and most of the code pieces are taken from the book. I did modifications, for a better usability.
+The concepts and most of the code pieces are taken from the book. I did modifications to enhance the usability and have an llm which runs out of the box and uses all the described concepts in the book.
 
 See also the [GitHub repository](https://github.com/rasbt/LLMs-from-scratch) for the original code of the book.
 
 Most of the code is commented with few sentences what it is doing and where to look at in the book to find more information.
 
-The intention of this repository is to exist just for learning-purposes.
+The intention of this repository is to exist for learning-purposes.
 
 ## Setup
 
-This repository uses poetry for virtual environments.
+This repository uses `poetry` for managing virtual environments and packages.
 
 1. Clone the repository
 ```sh
@@ -36,13 +36,13 @@ Before the LLM can be used, the model needs to be fine-tuned.
 
 The LLM fine-tunes a `gpt2-medium (355M)` and loads the weights to the `GPTModel` class in `gpt.py`.
 
-Run `instruction-finetune.py` to kick-off the process.
+Run `instruction-finetune.py` to kick-off the process:
 
 ```sh
 python instruction-finetune.py
 ```
 
-This loads a some data. After that the finetuning process kicks-off which may take some time depending on the hardware.
+This loads some data. After that the finetuning process starts which may take some time depending on the hardware.
 
 The model is stored in the `models` directory.
 
@@ -77,6 +77,6 @@ python llm.py
 
 ## Using GPU/CPU
 
-`llm.py` and `instruction-finetune.py` have a `prefer_gpu` variable. If this is set to true, GPU will be used to train the model. Default is CPU (or mps for MacBooks).
+`llm.py` and `instruction-finetune.py` have a `prefer_gpu` variable. If this is set to true, `cuda` will be used to train and run the model. Default is `cpu` (or `mps` for MacBooks).
 
-Beware that only a model which was finetuned with a GPU can be used in `llm.py` with `prefer_gpu=True`
+Beware that only a model which was finetuned with `cuda` can be used in `llm.py` with `prefer_gpu=True`
