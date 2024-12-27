@@ -1,0 +1,5 @@
+data/*.json
+data/gpt2/*
+models/*
+.venv/
+__pycache__/
