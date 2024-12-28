@@ -1,3 +1,5 @@
+!.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -170,5 +172,10 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-data/
-models/
+# Configurations for data and models directory
+data/*.json
+data/gpt2/*
+!data/gpt2/.gitkeep
+
+models/*
+!models/.gitkeep
