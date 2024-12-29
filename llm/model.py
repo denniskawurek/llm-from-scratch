@@ -4,10 +4,9 @@ import tiktoken
 
 def load_model_dict(model_path):
     if os.path.exists(model_path) is False:
-        print("Model does not exist. Train the model first. See README.md for instructions.")
-        exit
+        raise RuntimeError("Model does not exist. Train the model first. See README.md for instructions.")
 
-    model = torch.load(model_path)
+    model = torch.load(model_path, weights_only=True)
     print("Model loaded successfully.")
     return model
 
@@ -17,7 +16,7 @@ def save_model_dict(model, model_path):
 
 def get_model_path(prefer_gpu=True):
     if prefer_gpu:
-        return "models/llm-gpu-sft.pth"
+        return "models/llm-cuda-sft.pth"
     return "models/llm-cpu-sft.pth"
 
 def get_device(prefer_gpu=True):

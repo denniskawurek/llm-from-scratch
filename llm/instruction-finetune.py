@@ -6,7 +6,7 @@ from instruction.dataloader import create_dataloader
 from instruction.evaluate import is_ollama_running, generate_model_scores
 from training import train_model_simple
 from tokens import text_to_token_ids, token_ids_to_text
-from model import get_device, get_tokenizer, save_model_dict
+from model import get_device, get_model_path, get_tokenizer, save_model_dict
 from functools import partial
 from gpt_download import download_and_load_gpt2
 from gpt import GPTModel, generate
@@ -141,7 +141,7 @@ def main():
     test_evaluation(model, tokenizer, device, test_data)
         
     ## Save model for future usage
-    save_model_dict(model, 'models/llm-cuda-sft.pth')
+    save_model_dict(model, get_model_path(prefer_gpu))
     print("Model saved.")
     print("Next steps: Evaluate model responses using ollama.")
 

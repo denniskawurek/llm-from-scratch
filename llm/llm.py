@@ -13,6 +13,8 @@ def init_model():
 
     model_path = get_model_path(prefer_gpu)
     model.load_state_dict(load_model_dict(model_path))
+    if prefer_gpu:
+        model = model.to('cuda')
 
     return model
 
