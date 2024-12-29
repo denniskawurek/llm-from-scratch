@@ -39,7 +39,7 @@ The LLM fine-tunes a `gpt2-medium (355M)` and loads the weights to the `GPTModel
 Run `instruction-finetune.py` to kick-off the process:
 
 ```sh
-python instruction-finetune.py
+python llm/instruction-finetune.py
 ```
 
 This loads some data. After that the finetuning process starts which may take some time depending on the hardware.
@@ -72,7 +72,7 @@ Now uncomment the following line in `llm.py` and run `python llm.py` afterwards:
 Use `llm.py` to run the LLM. Right now it contains the `input_text` variable. This is the instruction which can be set for the LLM.
 
 ```sh
-python llm.py
+python llm/llm.py
 ```
 
 ## Using GPU/CPU
