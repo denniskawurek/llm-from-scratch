@@ -71,12 +71,24 @@ Now uncomment the following line in `llm.py` and run `python llm.py` afterwards:
 
 Use `llm.py` to run the LLM. Right now it contains the `input_text` variable. This is the instruction which can be set for the LLM.
 
+The following command starts an interactive session where the model is loaded and can receive instructions:
+
 ```sh
 python llm/llm.py
 ```
 
+The following command loads just the model and processes the given instruction:
+
+```sh
+python llm/llm.py 'What is the capital of United Kingdom?'
+```
+
+### Options
+
+`--prefer-gpu` - use GPU for generating responses.
+
 ## Using GPU/CPU
 
-`llm.py` and `instruction-finetune.py` have a `prefer_gpu` variable. If this is set to true, `cuda` will be used to train and run the model. Default is `cpu` (or `mps` for MacBooks).
+`instruction-finetune.py` has a `prefer_gpu` variable. If this is set to true, `cuda` will be used to train and run the model. Default is `cpu` (or `mps` for MacBooks).
 
 Beware that only a model which was finetuned with `cuda` can be used in `llm.py` with `prefer_gpu=True`
