@@ -11,7 +11,9 @@ torch = "^2.5.1"
 tensorflow = "2.18.0"
 tqdm = "4.67.1"
 psutil = "6.1.1"
-
+llama-index-embeddings-huggingface = "0.4.0"
+llama-index = "0.12.9" 
+tf-keras = "2.18.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -14,7 +14,7 @@ from load_weights import load_weights_into_gpt
 from model import get_base_config, get_model_size
 
 # General settings
-prefer_gpu = False
+prefer_gpu = True
 
 def instruction_fine_tune(model, tokenizer, train_loader, val_loader, device, val_data):    
     start_time = time.time()
